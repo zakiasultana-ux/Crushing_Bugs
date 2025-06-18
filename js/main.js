@@ -29,6 +29,24 @@ function drop(event){
     currentDraggedElement = null;
 }
 
+function resetGame() {
+    console.log("Reset Game Called");
+    
+    targetZones.forEach(zone => {
+        while (zone.firstChild) {
+            zone.removeChild(zone.firstChild);
+        }
+    });
+    labels.forEach(label => {
+        document.body.appendChild(label);
+        // Move all labels from target zones back to label box
+        if (label) {
+            labelBox.appendChild(label);
+        }
+    });
+    currentDraggedElement = null;
+}
+
 // event listeners
 
 labels.forEach(label => {
@@ -39,3 +57,5 @@ tragetZones.forEach(traget => {
     traget.addEventListener("dragover",drageOver);
     traget.addEventListener("drop",drop);
 });
+
+resetBtn.addEventListener("click", resetGame);
