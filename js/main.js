@@ -20,6 +20,8 @@ function drageOver(event){
 
 function drop(event){
     event.preventDefault();
+    // Remove highlight when item is dropped
+    this.classList.remove("highlight");
      // Only allow drop if zone is empty
     if (this.children.length > 0) {
         console.log("This drop zone already has a label.");
@@ -47,6 +49,17 @@ function resetGame() {
     currentDraggedElement = null;
 }
 
+// function for highlight the target zone when dragging over it
+
+function dragEnter(event) {
+    event.preventDefault();
+    this.classList.add("highlight");
+}
+
+function dragLeave() {
+    this.classList.remove("highlight");
+}
+
 // event listeners
 
 labels.forEach(label => {
@@ -56,6 +69,9 @@ labels.forEach(label => {
 tragetZones.forEach(traget => {
     traget.addEventListener("dragover",drageOver);
     traget.addEventListener("drop",drop);
+    // Add event listeners for highlighting
+    target.addEventListener("dragenter", dragEnter);
+    target.addEventListener("dragleave", dragLeave);
 });
 
 resetBtn.addEventListener("click", resetGame);

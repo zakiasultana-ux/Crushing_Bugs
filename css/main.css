@@ -48,6 +48,14 @@ h1,p{
     transition: all 0.2s ease-in-out;
 }
 
+/* created style for the highlight effect in js  */
+
+.target-zone.highlight {
+    background-color: #ffe680;
+    border: 2px dashed #f7b500;
+    transition: background-color 0.2s ease;
+}
+
 #heart{
     top: 40%;
     left: 50%;
