@@ -20,6 +20,11 @@ function drageOver(event){
 
 function drop(event){
     event.preventDefault();
+     // Only allow drop if zone is empty
+    if (this.children.length > 0) {
+        console.log("This drop zone already has a label.");
+        return;
+    }
     this.appendChild(currentDraggedElement);
     currentDraggedElement = null;
 }
