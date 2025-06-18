@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- We need this tag to properly display our pages at mobile size/make it responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.css" rel="stylesheet">
+    <title>Human Anatomy Puzzle Game</title>
+</head>
+<body>
+    <h1>Human Anatomy Game</h1>
+    <p>can you match the labels to the proper body parts?</p>
+    <main class="content">
+        <h2 class="hidden">Human Anatomy</h2>
+        <section class="anatomy-image">
+            <img src="images/body.png" alt="human body diagram" class="body-image">
+            <!-- traget/drop zones -->
+             <div class="traget-zone" id="heart"></div>
+             <div class="traget-zone" id="lungs"></div>
+             <div class="traget-zone" id="liver"></div>
+             <div class="traget-zone" id="stomach"></div>
+             <div class="traget-zone" id="intestines"></div>
+        </section>
+        <section class="labels-container">
+            <h2 class="labels-header">drages these labels to the correct body parts</h2>
+            <div id="label-box">
+                <div class="label" draggable="true">heart</div>
+                <div class="label" draggable="true">lungs</div>
+                <div class="label" draggable="true">liver</div>
+                <div class="label" draggable="true">stomach</div>
+                <div class="label" draggable="true">intestines</div>
+            </div>
+            <button class="reset-btn" id="reset-btn">reset Game</button>
+        </section>
+    </main>    
+    <script src="js/main.js"></script>
+</body>
+</html>
